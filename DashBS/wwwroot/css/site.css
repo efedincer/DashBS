@@ -29,3 +29,12 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.nav-link.active {
+    background-color: #495057;
+    border-radius: 5px;
+}

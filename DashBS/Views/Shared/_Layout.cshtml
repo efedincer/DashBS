@@ -17,9 +17,8 @@
     <main class="p-4">
       @RenderBody()
     </main>
-    @await Html.PartialAsync("_Footer")    
+    @await Html.PartialAsync("_Footer")
   </div>
-
   @await Html.PartialAsync("_Scripts")
   @await RenderSectionAsync("Scripts", required: false) <!-- For page level scripts -->
 </body>
