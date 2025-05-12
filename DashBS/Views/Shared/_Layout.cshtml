@@ -8,34 +8,19 @@
 </head>
 <body>
 
-  <div class="sidebar">
-    <h4 class="text-white text-center py-3">Admin</h4>
-    <a href="/Admin/Dashboard">Dashboard</a>
-    <a href="/Admin/Users">Users</a>
-    <a href="/Admin/Settings">Settings</a>
-  </div>
-  <div class="main-content">
-    <nav class="navbar navbar-light bg-light mb-4">
-      <span class="navbar-brand">Admin Panel</span>
-    </nav>
+  <!-- Sidebar -->
+  @await Html.PartialAsync("_Sidebar")
 
-    @RenderBody()
-    @await Html.PartialAsync("_Footer")
-    @await Html.PartialAsync("_Scripts")
-    @await RenderSectionAsync("Scripts", required: false) <!-- For page level scripts -->
-  </div>
-
-  <!-- Sidebar will come here or it will be in "_Header" partial -->
-  <!-- Topbar / Navbar will come also -->
-
-  @* @await Html.PartialAsync("_Header")
-
-  <div class="container">
-    <main role="main" class="pb-3">
+  <div class="flex-grow-1">
+    <!-- Navbar -->
+    @await Html.PartialAsync("_Navbar")
+    <main class="p-4">
       @RenderBody()
     </main>
-  </div> *@
+    @await Html.PartialAsync("_Footer")    
+  </div>
 
-  
+  @await Html.PartialAsync("_Scripts")
+  @await RenderSectionAsync("Scripts", required: false) <!-- For page level scripts -->
 </body>
 </html>
